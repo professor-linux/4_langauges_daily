@@ -24,6 +24,11 @@ int main(int argc, char *argv[]){
 	        size_t bw = write(result, text, length);
 	        printf("Bytes Written %ld\n", bw);
 		close(result);	
+
+		FILE *file = open(filename, "ab")
+		fputc('\n',file);
+		fputc('\0',file);
+		fclose(file);
 	}
 	else {
 	     int result = open(filename, O_CREAT | O_RDWR);
